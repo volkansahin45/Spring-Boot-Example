@@ -3,12 +3,14 @@ package com.example.interact.Repository;
 import com.example.interact.Entity.Movie;
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class MovieRepository {
-    private HashMap<Long, Movie> movies = new HashMap<Long, Movie>();
+    private Map<Long, Movie> movies = new HashMap<Long, Movie>();
     private static long staticId = 0;
 
-    public HashMap<Long, Movie> get() {
+    public Map<Long, Movie> get() {
         return movies;
     }
 
@@ -38,5 +40,11 @@ public class MovieRepository {
         } else {
             return "An error occured";
         }
+    }
+
+    public Map<Long, Movie> getMoviesByYear(int year) {
+        return   movies.entrySet().stream()
+                .filter(map -> map.getValue().getYear() == year)
+                .collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue()));
     }
 }
