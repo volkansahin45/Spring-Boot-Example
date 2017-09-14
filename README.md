@@ -29,4 +29,6 @@ Run the application
 
 Delete A Movie : DELETE /movie/{id}
 
+Filter by Year : GET /movie/year/{year}
+
 
