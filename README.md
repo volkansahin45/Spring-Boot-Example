@@ -1,15 +1,9 @@
 # Spring-Boot-Example
 CRUD operations on Movie object with Spring Boot with on-memory data
 
-## Prerequisites
-
-You need to have Tomcat Server for running application
-
 ## Running
 
 Open application with your favorite IDE
-
-Setup Tomcat
 
 Run the application
 
